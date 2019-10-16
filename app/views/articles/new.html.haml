@@ -1,0 +1,9 @@
+.new-article
+  .new-article__box
+    = form_for @article, html:{class: "new-article__box__form"} do |f|
+      = f.text_field :title, class: "new-article__box__form__title", placeholder: "記事のタイトルを入力してください"
+      = f.text_area :text, class: "new-article__box__form__text", placeholder: "本文を入力してください"
+      = f.label :image do
+        -# = fa_icon "image", class:"fa"
+        = f.file_field
+      = f.submit "投稿する", class: "new-article__box__form__submit"

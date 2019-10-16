@@ -1,3 +1,137 @@
 // Place all the styles related to the articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+*{
+  box-sizing: border-box;
+}
+
+html, body{
+  height: 100%;
+  width: 100%;
+}
+
+
+.header{
+  background-color: navy;
+  opacity: 0.9;
+  height: 60px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  .header-left{
+    width: 50%;
+    float: left;
+    height: 60px;
+    padding-left: 20px;
+    &__title{
+      color: white;
+      font-weight: bold;
+      font-size: 30px;
+      line-height: 60px;
+    }
+  }
+  .header-right{
+    float: right;
+    height: 60px;
+    width: 50%;
+    padding-right: 20px;
+    &__list{
+      float: right;
+      height: 100%;
+      li{
+        padding-left: 10px;
+        float: left;
+        line-height: 60px;
+        a{
+          color: white;
+          text-decoration-line: none;
+        }
+      }
+    }
+  }
+}
+
+.main-contents{
+  padding-top: 60px;
+  width: 100%;
+  height: calc(100% - 60px);
+  background-image: url("/images/C7F2519D-FD00-4FD6-977D-DB14DDE94560.jpeg");
+  background-size: contain;
+  .articles{
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    opacity: 0.7;
+    overflow: scroll;
+    .article{
+      border: 1px solid gray;
+      border-radius: 5px;
+      background-color: whitesmoke;
+      margin-bottom: 5px;
+      &__box{
+        padding: 10px;
+        opacity: 1;
+        &__title{
+          font-weight: bold;
+          font-size: 24px;
+          border-bottom: 1px solid darkorange;
+        }
+      }   
+    }
+  }
+}
+
+.new-article{
+  padding-top: 60px;
+  width: 100%;
+  height: calc(100% - 60px);
+  background-image: url("/images/C7F2519D-FD00-4FD6-977D-DB14DDE94560.jpeg");
+  background-size: contain;
+  &__box{
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    opacity: 0.7;
+    display: flex;
+    align-items: center;
+    &__form{
+      border: 1px solid gray;
+      border-radius: 5px;
+      background-color: whitesmoke;
+      height: 50%;
+      width: 100%;
+      &__title{
+        width: calc( 100% - 20px);
+        padding: 10px;
+        margin: 10px;
+      }
+      &__text{
+        width: calc( 100% - 20px);
+        height: 60%;
+        padding: 10px;
+        margin: 10px;
+      }
+      &__submit{
+        display: block;
+        margin: 0 auto;
+        width: 120px;
+      }
+    }
+  }
+}
+
+.footer{
+  height: 60px;
+  background-color: navy;
+  width: 100%;
+  bottom: 0px;
+  z-index: 10;
+  &__text{
+    color: white;
+    text-align: center;
+    line-height: 60px;
+  }
+}

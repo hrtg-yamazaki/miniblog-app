@@ -1,0 +1,32 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title MiniblogApp
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+
+    %header.header
+
+      .header-left
+        .header-left__title MiniApp
+
+      .header-right
+        %ul.header-right__list
+          %li.header-right__list__left
+            %a(href="") サインイン
+          %li.header-right__list__center
+            %a(href="") 新規登録
+          %li.header-right__list__right
+            %a(href="") 投稿する
+
+    = yield
+
+    %footer.footer
+      %p.footer__text ©Hirotsugu Yamazaki
+
+
+
