@@ -4,6 +4,7 @@
 
 *{
   box-sizing: border-box;
+  font-family: 'Hiragino Maru Gothic ProN';
 }
 
 html, body{
@@ -11,9 +12,12 @@ html, body{
   width: 100%;
 }
 
+// 色の定義 //
+$darkbrown: rgb(31, 11, 11);
 
+// application //
 .header{
-  background-color: navy;
+  background-color: $darkbrown;
   opacity: 0.9;
   height: 60px;
   width: 100%;
@@ -31,6 +35,8 @@ html, body{
       font-weight: bold;
       font-size: 30px;
       line-height: 60px;
+      text-decoration-line: none;
+      font-family: "Hiragino Kaku Gothic StdN";
     }
   }
   .header-right{
@@ -45,6 +51,10 @@ html, body{
         padding-left: 10px;
         float: left;
         line-height: 60px;
+        p{
+          color: white;
+          font-size: 10px;
+        }
         a{
           color: white;
           text-decoration-line: none;
@@ -54,17 +64,19 @@ html, body{
   }
 }
 
+// index //
 .main-contents{
   padding-top: 60px;
   width: 100%;
-  height: calc(100% - 60px);
+  height: 100%;
   background-image: url("/images/C7F2519D-FD00-4FD6-977D-DB14DDE94560.jpeg");
   background-size: contain;
   .articles{
     width: 80%;
-    height: 100%;
+    padding-top: 5px;
+    height: calc(100% - 30px);
     margin: 0 auto;
-    opacity: 0.7;
+    opacity: 0.8;
     overflow: scroll;
     .article{
       border: 1px solid gray;
@@ -78,23 +90,52 @@ html, body{
           font-weight: bold;
           font-size: 24px;
           border-bottom: 1px solid darkorange;
+          width: 70%;
+          display: inline-block;
+          &__user{
+            font-size: 12px;
+            float: right;
+            padding-top: 12px;
+            padding-right: 5px;
+            color: navy;
+          }
+        }
+        &__btn{
+          float: right;
+          width: 30%;
+          &__show{
+            float: right;
+          }
+          a{
+            text-decoration-line: none;
+            display: inline-block;
+            background-color: gray;
+            border: 2px solid navy;
+            border-radius: 2px;
+            color: white;
+            opacity: 0.9;
+            padding: auto;
+            width: 30%;
+            text-align: center;
+          }
         }
       }   
     }
   }
 }
 
+// art-new //
 .new-article{
   padding-top: 60px;
   width: 100%;
-  height: calc(100% - 60px);
+  height: 100%;
   background-image: url("/images/C7F2519D-FD00-4FD6-977D-DB14DDE94560.jpeg");
   background-size: contain;
   &__box{
     width: 80%;
     height: 100%;
     margin: 0 auto;
-    opacity: 0.7;
+    opacity: 0.8;
     display: flex;
     align-items: center;
     &__form{
@@ -123,15 +164,114 @@ html, body{
   }
 }
 
+.undisplayed{
+  display: none;
+}
+
+// application //
 .footer{
-  height: 60px;
-  background-color: navy;
+  height: 30px;
+  background-color: $darkbrown;
   width: 100%;
   bottom: 0px;
   z-index: 10;
+  opacity: 0.9;
+  position: fixed;
   &__text{
     color: white;
     text-align: center;
-    line-height: 60px;
+    line-height: 30px;
+    font-size: 10px;
   }
 }
+
+// devise //
+.user-devise{
+  padding-top: 60px;
+  width: 100%;
+  height: 100%;
+  background-image: url("/images/shinwa_poseidon.png");
+  background-size: contain;
+  .new_user{
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    opacity: 0.8;
+    display: flex;
+    align-items: center;
+    &__box{
+      border: 1px solid gray;
+      border-radius: 5px;
+      background-color: whitesmoke;
+      height: 55%;
+      width: 100%;
+      overflow: scroll;
+      &__signup{
+        text-align: center;
+        padding-top: 5px;
+      }
+      &__signin{
+        text-align: center;
+        padding-top: 10px;
+      }
+      &__nickname{
+        width: calc( 100% - 20px);
+        padding: 10px;
+        margin: 10px;
+        &__field{
+          width: 100%;
+          padding: 2px;
+        }
+      }
+      &__email{
+        width: calc( 100% - 20px);
+        padding: 10px;
+        margin: 10px;
+        &__field{
+          width: 100%;
+          padding: 5px;
+        }
+      }
+      &__password{
+        width: calc( 100% - 20px);
+        padding: 10px;
+        margin: 10px;
+        &__field{
+          width: 100%;
+          padding: 5px;
+        }
+      }
+      &__password-conf{
+        width: calc( 100% - 20px);
+        padding: 10px;
+        margin: 10px;
+        &__field{
+          width: 100%;
+          padding: 5px;
+        }
+      }
+      &__rmbrme{
+        width: calc( 100% - 20px);
+        padding: 10px;
+        margin: 10px;
+      }
+      &__actions{
+        height: 40px;
+        &__btn{
+        display: block;
+        margin: 0 auto;
+        width: 120px;
+        height: 40px;
+        font-size: 30px;
+        padding: 15px;
+        }
+      }
+    }
+  }
+}
+
+#error_explanation{
+  font-size: 10px;
+  color: red;
+}
+

@@ -12,16 +12,24 @@
     %header.header
 
       .header-left
-        .header-left__title MiniApp
+        = link_to "BlogApp", root_path, class: "header-left__title" 
 
       .header-right
         %ul.header-right__list
-          %li.header-right__list__left
-            %a(href="") サインイン
-          %li.header-right__list__center
-            %a(href="") 新規登録
-          %li.header-right__list__right
-            %a(href="") 投稿する
+          - if user_signed_in?
+            %li.header-right__list__user
+              %p #{current_user.nickname}さん
+            %li.header-right__list__sign-out
+              = link_to "サインアウト", destroy_user_session_path, method: :delete
+            %li.header-right__list__new-article
+              = link_to "投稿する", new_article_path
+          - else
+            %li.header-right__list__sign-in
+              = link_to "サインイン", new_user_session_path
+            %li.header-right__list__sign-up
+              = link_to "新規登録", new_user_registration_path
+          
+
 
     = yield
 
