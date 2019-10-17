@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
 
-before_action :move_to_index, except: :index
+before_action :move_to_index, except: [:index, :show]
 
 def index
   @articles = Article.all.order("created_at DESC")
@@ -36,6 +36,7 @@ def update
 end
 
 def show
+  @article = Article.find(params[:id])
 end
 
 private

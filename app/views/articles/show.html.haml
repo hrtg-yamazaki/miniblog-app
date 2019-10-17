@@ -1,0 +1,14 @@
+.main-contents
+  .show
+    .show-article
+      .show-article__box
+        .show-article__box__btn
+          - if user_signed_in? && current_user.id == @article.user_id
+            = link_to "削除", "/articles/#{@article.id}", method: :delete, class: "show-article__box__btn__delete"
+            = link_to "編集", edit_article_path(@article.id), class: "show-article__box__btn__edit"
+        .show-article__box__title
+          = @article.title
+          = link_to "by #{@article.user.nickname}", "", class: "show-article__box__title__user"
+        %p.show-article__box__text
+          = simple_format(@article.text)
+        .show-article__box__image
