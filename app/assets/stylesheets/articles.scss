@@ -1,3 +1,277 @@
 // Place all the styles related to the articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+*{
+  box-sizing: border-box;
+  font-family: 'Hiragino Maru Gothic ProN';
+}
+
+html, body{
+  height: 100%;
+  width: 100%;
+}
+
+// 色の定義 //
+$darkbrown: rgb(31, 11, 11);
+
+// application //
+.header{
+  background-color: $darkbrown;
+  opacity: 0.9;
+  height: 60px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  .header-left{
+    width: 50%;
+    float: left;
+    height: 60px;
+    padding-left: 20px;
+    &__title{
+      color: white;
+      font-weight: bold;
+      font-size: 30px;
+      line-height: 60px;
+      text-decoration-line: none;
+      font-family: "Hiragino Kaku Gothic StdN";
+    }
+  }
+  .header-right{
+    float: right;
+    height: 60px;
+    width: 50%;
+    padding-right: 20px;
+    &__list{
+      float: right;
+      height: 100%;
+      li{
+        padding-left: 10px;
+        float: left;
+        line-height: 60px;
+        p{
+          color: white;
+          font-size: 10px;
+        }
+        a{
+          color: white;
+          text-decoration-line: none;
+        }
+      }
+    }
+  }
+}
+
+// index //
+.main-contents{
+  padding-top: 60px;
+  width: 100%;
+  height: 100%;
+  background-image: url("/images/C7F2519D-FD00-4FD6-977D-DB14DDE94560.jpeg");
+  background-size: contain;
+  .articles{
+    width: 80%;
+    padding-top: 5px;
+    height: calc(100% - 30px);
+    margin: 0 auto;
+    opacity: 0.8;
+    overflow: scroll;
+    .article{
+      border: 1px solid gray;
+      border-radius: 5px;
+      background-color: whitesmoke;
+      margin-bottom: 5px;
+      &__box{
+        padding: 10px;
+        opacity: 1;
+        &__title{
+          font-weight: bold;
+          font-size: 24px;
+          border-bottom: 1px solid darkorange;
+          width: 70%;
+          display: inline-block;
+          &__user{
+            font-size: 12px;
+            float: right;
+            padding-top: 12px;
+            padding-right: 5px;
+            color: navy;
+          }
+        }
+        &__btn{
+          float: right;
+          width: 30%;
+          &__show{
+            float: right;
+          }
+          a{
+            text-decoration-line: none;
+            display: inline-block;
+            background-color: gray;
+            border: 2px solid navy;
+            border-radius: 2px;
+            color: white;
+            opacity: 0.9;
+            padding: auto;
+            width: 30%;
+            text-align: center;
+          }
+        }
+      }   
+    }
+  }
+}
+
+// art-new //
+.new-article{
+  padding-top: 60px;
+  width: 100%;
+  height: 100%;
+  background-image: url("/images/C7F2519D-FD00-4FD6-977D-DB14DDE94560.jpeg");
+  background-size: contain;
+  &__box{
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    opacity: 0.8;
+    display: flex;
+    align-items: center;
+    &__form{
+      border: 1px solid gray;
+      border-radius: 5px;
+      background-color: whitesmoke;
+      height: 50%;
+      width: 100%;
+      &__title{
+        width: calc( 100% - 20px);
+        padding: 10px;
+        margin: 10px;
+      }
+      &__text{
+        width: calc( 100% - 20px);
+        height: 60%;
+        padding: 10px;
+        margin: 10px;
+      }
+      &__submit{
+        display: block;
+        margin: 0 auto;
+        width: 120px;
+      }
+    }
+  }
+}
+
+.undisplayed{
+  display: none;
+}
+
+// application //
+.footer{
+  height: 30px;
+  background-color: $darkbrown;
+  width: 100%;
+  bottom: 0px;
+  z-index: 10;
+  opacity: 0.9;
+  position: fixed;
+  &__text{
+    color: white;
+    text-align: center;
+    line-height: 30px;
+    font-size: 10px;
+  }
+}
+
+// devise //
+.user-devise{
+  padding-top: 60px;
+  width: 100%;
+  height: 100%;
+  background-image: url("/images/shinwa_poseidon.png");
+  background-size: contain;
+  .new_user{
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    opacity: 0.8;
+    display: flex;
+    align-items: center;
+    &__box{
+      border: 1px solid gray;
+      border-radius: 5px;
+      background-color: whitesmoke;
+      height: 55%;
+      width: 100%;
+      overflow: scroll;
+      &__signup{
+        text-align: center;
+        padding-top: 5px;
+      }
+      &__signin{
+        text-align: center;
+        padding-top: 10px;
+      }
+      &__nickname{
+        width: calc( 100% - 20px);
+        padding: 10px;
+        margin: 10px;
+        &__field{
+          width: 100%;
+          padding: 2px;
+        }
+      }
+      &__email{
+        width: calc( 100% - 20px);
+        padding: 10px;
+        margin: 10px;
+        &__field{
+          width: 100%;
+          padding: 5px;
+        }
+      }
+      &__password{
+        width: calc( 100% - 20px);
+        padding: 10px;
+        margin: 10px;
+        &__field{
+          width: 100%;
+          padding: 5px;
+        }
+      }
+      &__password-conf{
+        width: calc( 100% - 20px);
+        padding: 10px;
+        margin: 10px;
+        &__field{
+          width: 100%;
+          padding: 5px;
+        }
+      }
+      &__rmbrme{
+        width: calc( 100% - 20px);
+        padding: 10px;
+        margin: 10px;
+      }
+      &__actions{
+        height: 40px;
+        &__btn{
+        display: block;
+        margin: 0 auto;
+        width: 120px;
+        height: 40px;
+        font-size: 30px;
+        padding: 15px;
+        }
+      }
+    }
+  }
+}
+
+#error_explanation{
+  font-size: 10px;
+  color: red;
+}
+

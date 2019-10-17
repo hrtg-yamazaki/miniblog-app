@@ -1,0 +1,40 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title MiniblogApp
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+
+    %header.header
+
+      .header-left
+        = link_to "BlogApp", root_path, class: "header-left__title" 
+
+      .header-right
+        %ul.header-right__list
+          - if user_signed_in?
+            %li.header-right__list__user
+              %p #{current_user.nickname}さん
+            %li.header-right__list__sign-out
+              = link_to "サインアウト", destroy_user_session_path, method: :delete
+            %li.header-right__list__new-article
+              = link_to "投稿する", new_article_path
+          - else
+            %li.header-right__list__sign-in
+              = link_to "サインイン", new_user_session_path
+            %li.header-right__list__sign-up
+              = link_to "新規登録", new_user_registration_path
+          
+
+
+    = yield
+
+    %footer.footer
+      %p.footer__text ©Hirotsugu Yamazaki
+
+
+

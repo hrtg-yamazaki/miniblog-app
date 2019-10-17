@@ -1,0 +1,29 @@
+.user-devise
+  
+  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    
+    .new_user__box
+      %h2.new_user__box__signup 新規登録
+      = render "devise/shared/error_messages", resource: resource
+      .new_user__box__nickname
+        = f.label :nickname
+        = f.text_field :nickname, autofocus: true, maxlength: "12", class: "new_user__box__nickname__field"
+      .new_user__box__email
+        = f.label :email
+        %br/
+        = f.email_field :email, autofocus: true, autocomplete: "email", class: "new_user__box__email__field"
+      .new_user__box__password
+        = f.label :password
+        - if @minimum_password_length
+          %em
+            (#{@minimum_password_length} characters minimum)
+        %br/
+        = f.password_field :password, autocomplete: "new-password", class: "new_user__box__password__field"
+      .new_user__box__password-conf
+        = f.label :password_confirmation
+        %br/
+        = f.password_field :password_confirmation, autocomplete: "new-password", class: "new_user__box__password-conf__field"
+      .new_user__box__actions
+        = f.submit "登録する", class: "new_user__box__actions__btn"
+
+      -# = render "devise/shared/links"
