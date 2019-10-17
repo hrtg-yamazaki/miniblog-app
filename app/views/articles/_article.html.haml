@@ -2,13 +2,11 @@
   .article
     .article__box
       .article__box__btn
-        - if current_user.id == article.user_id
-          = link_to "編集", edit_article_path(article.id)
-          = link_to "削除", "/articles/#{article.id}", method: :delete
+        
         = link_to "詳細", article_path(article.id), class: "article__box__btn__show"
       .article__box__title
         = article.title
         = link_to "by #{article.user.nickname}", "", class: "article__box__title__user"
       %p.article__box__text
-        = simple_format(article.text)
+        = article.text
       .article__box__image
